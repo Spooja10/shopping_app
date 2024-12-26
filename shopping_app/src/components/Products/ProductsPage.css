@@ -1,0 +1,16 @@
+.products_page{
+    /* display: grid;  for 2 section  */
+    display: flex;
+    grid-template-columns: 1fr 4fr;
+    gap: 20px; /* Space between sidebar and product cards */
+    padding: 20px;
+  }
+  
+  .products_sidebar {
+    flex: 1; /* Sidebar width */
+    max-width: 250px; /* Adjust width as needed */
+  }
+  
+  .product_list {
+    flex: 3; /* Main content width */
+  }
