@@ -11,10 +11,9 @@ const SingleProductPage = () => {
   const [selectedImage, setSelectedImage] = useState(0);
   const [quantity, setQuantity] = useState(1); 
   const {addToCart} = useContext(CartContext)
-  const user = useContext(UserContext)          // if user is not null then show add-to-cart button
+  const user = useContext(UserContext)         
   const { id } = useParams();
 
-  // copied Product Object code in (118 vd) manually applied
 const product = {
     id:1,
     title:"Product title",
@@ -59,13 +58,7 @@ const product = {
               <div className="align_center quantity_input">
                   <QuantityInput quantity={quantity} setQuantity={setQuantity} stock={product.stock} />
               </div>
-{/* ----- placed this in "QuantityInput.jsx" component  -------
-            <button className='quantity_input_button' disabled> - </button>
-            <p className='quantity_input_count'> 1 </p>
-            <button className='quantity_input_button'> + </button> 
-
-              <button className="search_button add_cart" onClick={() => addToCart(product, quantity)}>Add to Cart</button>
-*/}    
+            
               <button className="search_button add_cart" 
                 onClick={() => { if (quantity > 0 && quantity <= product.stock) {
                     addToCart(product, quantity);
@@ -73,9 +66,7 @@ const product = {
                     toast.error("Invalid quantity selected!");
                 }
               }} > Add to Cart 
-              </button>
-              {/* </>             // if user is not null then show add-to-cart button   
-              } */}
+              </button>     
               
           </div>
       </section>
