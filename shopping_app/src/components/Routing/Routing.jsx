@@ -22,11 +22,6 @@ const Routing = () => {
        <Route path='/cart' element={<Cartpage />} />
        <Route path='/myorders' element={<MyOrderPage />} />
        <Route path='/logout' element={<Logout />} />
-       {/* <Route element={<ProtectedRoute />}>
-       <Route path='/cart' element={<Cartpage />} />
-       <Route path='/myorders' element={<MyOrderPage />} />
-       <Route path='/logout' element={<Logout />} />
-       </Route> */}
     </Routes>
   )
 }
