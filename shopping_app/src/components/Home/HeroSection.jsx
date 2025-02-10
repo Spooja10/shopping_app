@@ -1,7 +1,7 @@
 import React from "react";
 
 import "./HeroSection.css";
-import { Link } from "react-router-dom";      // <Link to={link}> -- button works without reloading page 
+import { Link } from "react-router-dom";      
 //import Productcard from "../Productcard";
 
 const HeroSection = ({ title, subtitle, link, image }) => {
