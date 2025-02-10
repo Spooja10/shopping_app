@@ -28,7 +28,7 @@ const Navbar = () => {
    }
    setSuggestions([ ]);
   }
-//------- getting error  -------------
+
   useEffect(() => {
        if(search.trim() !== " "){
          getSuggestionsAPI(search)
@@ -65,18 +65,6 @@ const Navbar = () => {
         <div className='align_center navbar_links'>
             <LinkWithIcon title="Home" link="/" emoji={rocket} />
             <LinkWithIcon title="Products" link="/products" emoji={star}/>
-            {/* {!user && <>
-            <LinkWithIcon title="Login" link="/login" emoji={id_button}/>
-            <LinkWithIcon title="SignUp" link="/signup" emoji={memo}/>
-            </>}
-            {user && <>
-            <LinkWithIcon title="My Orders" link="/myorders" emoji={order}/>
-            <LinkWithIcon title="Logout" link="/logout" emoji={locked}/>
-
-            <NavLink to="/cart" className='align_center'>Cart
-               <p className='align_center cart_counts'>0</p>
-            </NavLink> 
-            </>} */}
 
             {!user && <>
             <LinkWithIcon title="Login" link="/login" emoji={id_button}/>
