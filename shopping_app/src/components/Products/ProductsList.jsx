@@ -13,28 +13,6 @@ const ProductsList = () => {
   const [products, setProducts] = useState([]);
   const [error1, setError1] = useState(" ");;
   const searchQuery = search.get("search")
-  // const [search, setSearch] = useSearchParams();  // used for without refreshing page get all products after clicking on category list
-  // const category = search.get("category");
-
-  //const { isLoading} = useData("/products", {
-  //    params:{
-  //      search: searchQuery, 
-  //      category,
-  //      perPage: 10,
-  //      page,
-  //   },
-  //  }, [searchQuery, category, page])
-
-  //     useEffect( () => {
-  //       setPage(1)
-  //     }, [category])
-
-  // const skeletons = [1,2,3,4,5,6,7,8];
-  
-  // const handlePageChange = page => {
-  //   const currentParams = Object.fromEntries([...search])
-  //   setSearch({...currentParams, page: parseInt(currentParams.page) + 1 })
-  // }
 
   useEffect(() => {
     const handleScroll = () => {
@@ -55,9 +33,7 @@ const ProductsList = () => {
       .then(res => setProducts(res.data.products))
       .catch(err => setError1(err.message))
   }, [])
-  // Fetch products based on category or fetch all if no category is provided
-  // const { data, error } = useData(category ? /products?category=${category} : '/products');
-
+  
   return (
     <section className="products_list_section">
       <header className="align_center products_list_header">
@@ -90,12 +66,7 @@ const ProductsList = () => {
           />
         ))}
       </div>
-      {/* {products && <Pagination 
-      totalPosts={products.totalProducts} 
-      postsPerPage={2} 
-      onClick={handlePageChange}
-      currentpage={page}
-      />} */}
+     
     </section>
   );
 };
